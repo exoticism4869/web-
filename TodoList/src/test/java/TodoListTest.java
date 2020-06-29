@@ -6,7 +6,7 @@ import java.util.Vector;
 public class TodoListTest {
     @Test
     //1.
-    public void shouldReturnTureWhenGiveT_Check(){
+    public void shouldReturnTrueWhenGiveT_Check(){
         TodoList todoList = new TodoList();
         String todo = "a completed item";
         todoList.add(todo);
