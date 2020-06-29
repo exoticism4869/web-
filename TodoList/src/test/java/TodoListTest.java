@@ -1,42 +1,57 @@
+import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.Vector;
 
 public class TodoListTest {
     @Test
-    public void shouldAddNewItem() {
+    //1.
+    public void shouldReturnTureWhenGiveT_Check(){
+        TodoList todoList = new TodoList();
+        String todo = "a completed item";
+        todoList.add(todo);
+
+        boolean f = todoList.check(todo);
+        Assert.assertTrue(f);
+    }
+
+    @Test
+    //5.
+    public void shouldReturn3_Size(){
+        TodoList todoList = new TodoList();
+        for (int i = 0; i < 3; i++) {
+            todoList.add("test" + i);
+        }
+        long l = todoList.size();
+        Assert.assertEquals(3, l);
+    }
+
+    @Test
+    //6.&3.
+    public void successAddNewItemOrNot() {
 
         TodoList todoList = new TodoList();
         String todo = "add test";
         todoList.add(todo);
 
-        int lastIndex = todoList.size() - 1;
+        int lastIndex = 0;
         TodoItem lastItem = todoList.get(lastIndex);
-        assert lastItem.toString().equals(todo);
+        boolean b = todo.equals(lastItem.toString());
+        Assert.assertTrue(b);
     }
 
     @Test
-    public void shouldDeleteItem() {
-
+    //7.&4.
+    public void successDeleteItemOrNot() {
         TodoList todoList = new TodoList();
         String todo = "item to delete";
         todoList.add(todo);
 
         todoList.delete(todo);
 
-        for (TodoItem item : todoList.getTodoItems()) {
-            assert !item.toString().equals(todo);
-        }
-    }
-
-    @Test
-    public void shouldCheckItem() {
-
-        TodoList todoList = new TodoList();
-        String todo = "a completed item";
-        todoList.add(todo);
-
-        todoList.check(todo);
-
-        TodoItem item = todoList.get(0);
-        assert item.isChecked;
+        TodoItem t = todoList.get(todo);
+        boolean b = false;
+        if(t == null) b = true;
+        Assert.assertTrue(b);
     }
 }

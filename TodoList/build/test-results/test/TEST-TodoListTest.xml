@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TodoListTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-06-29T03:55:45" hostname="DESKTOP-775QBTM" time="0.002">
+<testsuite name="TodoListTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-06-29T12:11:45" hostname="LAPTOP-IOQOHL7Q" time="0.003">
   <properties/>
-  <testcase name="shouldAddNewItem" classname="TodoListTest" time="0.001"/>
-  <testcase name="shouldCheckItem" classname="TodoListTest" time="0.0"/>
+  <testcase name="addingNewItemSuccessOrNot" classname="TodoListTest" time="0.002"/>
   <testcase name="shouldDeleteItem" classname="TodoListTest" time="0.0"/>
+  <testcase name="shouldReturnTureWhenGiveT_Check" classname="TodoListTest" time="0.001"/>
+  <testcase name="shouldReturn3_Size" classname="TodoListTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
