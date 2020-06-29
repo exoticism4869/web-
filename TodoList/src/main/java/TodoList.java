@@ -19,21 +19,38 @@ class TodoItem {
 public class TodoList {
     private Vector<TodoItem> todoItems = new Vector<TodoItem>();
 
+    public Vector<TodoItem> getTodoItems() {
+        return todoItems;
+    }
     public TodoItem get(int index) {
         return todoItems.get(index);
+    }
+    public TodoItem get(String todo) {
+        for (TodoItem t : todoItems) {
+            if (t.toString().equals(todo)) {
+                return t;
+            }
+        }
+        return null;
     }
     public int size() {
         return todoItems.size();
     }
-    public void add(String todo) {
-        for (TodoItem t : todoItems) {
-            if (t.toString().equals(todo)) {
-                return;
-            }
+    public boolean add(String todo) {
+        if (this.get(todo) != null) {
+            return false;
         }
         todoItems.add(new TodoItem(todo));
+        return true;
     }
-
+    public boolean delete(String todo) {
+        TodoItem t = this.get(todo);
+        if (t == null) {
+            return false;
+        }
+        todoItems.remove(t);
+        return true;
+    }
     public static void main(String[] args) {
 
     }
