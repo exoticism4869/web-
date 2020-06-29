@@ -2,12 +2,12 @@ import java.util.Vector;
 
 class TodoItem {
     private String name;
-    private boolean done;
+    public boolean isChecked;
 
     private TodoItem() { }
     TodoItem(String name) {
         this.name = name;
-        this.done = false;
+        this.isChecked = false;
     }
 
     @Override
@@ -18,6 +18,12 @@ class TodoItem {
 
 public class TodoList {
     private Vector<TodoItem> todoItems = new Vector<TodoItem>();
+
+    public boolean check(String todo) {
+        TodoItem t = get(todo);
+        t.isChecked = !t.isChecked;
+        return t.isChecked;
+    }
 
     public Vector<TodoItem> getTodoItems() {
         return todoItems;
